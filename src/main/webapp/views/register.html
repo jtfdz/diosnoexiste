@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/register.css">
+    
+</head>
+<body>
+    <div class="container border rounded w-50 registercontainer">
+      <h2>Register</h2>  
+        
+
+
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">First name:</label>
+                        <input type="text" class="form-control" name="name" id="name">
+                        
+                    </div>
+                    
+                    <div class="form-group col-md-6">
+                        <label for="lastname">Last name:</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname">
+                        
+                    </div>
+                    
+            </div>
+
+            <div class="form-group">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sex" value="male" id="male" checked>
+                  <label class="form-check-label" for="male"> Male </label>
+                  </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="sex" value="female" id="female">
+                  <label class="form-check-label" for="female"> Female</label>
+                </div>
+            </div>
+        
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" name="username" id="username">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+            </div>
+                
+            <div class="form-group">    
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" name="email" id="email">
+                
+            </div>
+            <div class="form-group">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" class="form-control" name="birthday" min="1900-01-01" max="2018-01-01" id="birthday">
+            </div>
+
+            <div class="form-group">
+                    <button id="submits" class="btn btn-primary btn-block"> Register  </button>
+            </div>
+           
+   </div>
+   <script src="../js/register.js"></script>
+</body>
+</html>
