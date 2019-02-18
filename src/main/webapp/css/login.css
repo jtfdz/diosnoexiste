@@ -1,8 +1,12 @@
-.registercontainer {
+.padded {
     padding: 2%;
     margin-top: 2%
 }
 
 h2 {
     text-align: center;
+}
+
+#submit {
+    margin: 0 auto
 }

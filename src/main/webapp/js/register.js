@@ -11,6 +11,4 @@ function postRegister(){
 }
     
     
-
-
-document.getElementById("submits").addEventListener("click", postRegister);
+document.getElementById("submit").addEventListener("click", postRegister);
