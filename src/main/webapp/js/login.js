@@ -5,6 +5,13 @@ function postLogin(){
     });
 
     console.log(data);
+
+    fetch("/login", {
+        method:"POST", 
+        body:JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }}).then((resp) => resp.json()).then((data) => console.log(data));
 }
 
 

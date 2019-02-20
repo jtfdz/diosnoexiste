@@ -1,5 +1,7 @@
 package com.tfmm.servlets;
 
+import com.tfmm.handlers.LoginHandler;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,5 +13,16 @@ import java.io.IOException;
 public class LogInServlet extends HttpServlet {
 
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LoginHandler handler = new LoginHandler();
+        try{
+            resp.setContentType("application/json");
+            String json = handler.handle(req, resp);
+            resp.getWriter().write(json);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
 
+    }
 }

@@ -18,6 +18,7 @@ public class RegisterHandler {
     public String handle(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Response<?> res = new Response<>();
         ObjectMapper objMapper = new ObjectMapper();
+
         PropertiesReader props = PropertiesReader.getInstance();
         DB db = new DB();
         RegisterModel model = objMapper.readValue(req.getReader(), RegisterModel.class);
@@ -30,7 +31,7 @@ public class RegisterHandler {
             db.execute(props.getValue("registerQuery"), model.getName(),
                     model.getLastname(),
                     model.getUsername(),
-                    enc.hashPassword(model.getPassword()),
+                    enc.hashString(model.getPassword()),
                     model.getEmail(),
                     sqlBdayDate ,
                     model.getSex());

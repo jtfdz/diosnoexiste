@@ -30,7 +30,7 @@ public class MD5Encrypter {
         return encrypter;
     }
 
-    public String hashPassword(String password){
+    public String hashString(String password){
         md.update(password.getBytes());
         byte[] digest = md.digest();
         String hash = DatatypeConverter.printHexBinary(digest).toUpperCase();
