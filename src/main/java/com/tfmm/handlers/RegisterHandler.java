@@ -22,7 +22,7 @@ public class RegisterHandler {
         PropertiesReader props = PropertiesReader.getInstance();
         DB db = new DB();
         RegisterModel model = objMapper.readValue(req.getReader(), RegisterModel.class);
-        MD5Encrypter enc = MD5Encrypter.getInstance();
+        MD5Encrypter enc = new MD5Encrypter();
         try {
             String birthDayDate = model.getBirthday();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

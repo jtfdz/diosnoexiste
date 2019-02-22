@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(filterName = "LoggedFilter", urlPatterns = {"/a"})
+@WebFilter(filterName = "LoggedFilter", urlPatterns = {"/"})
 public class LoggedFilter implements Filter {
 
     @Override

@@ -8,7 +8,7 @@ public class MD5Encrypter {
     private static MD5Encrypter encrypter = null;
     private MessageDigest md = null;
 
-    private MD5Encrypter(){
+    public MD5Encrypter(){
         try {
             md = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
@@ -16,19 +16,7 @@ public class MD5Encrypter {
         }
     }
 
-    public static MD5Encrypter getInstance() {
 
-        if(encrypter == null){
-
-            synchronized (MD5Encrypter.class){
-
-                if(encrypter == null){
-                    encrypter = new MD5Encrypter();
-                }
-            }
-        }
-        return encrypter;
-    }
 
     public String hashString(String password){
         md.update(password.getBytes());

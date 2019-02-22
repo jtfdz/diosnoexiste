@@ -6,12 +6,6 @@ public class Response<T> {
     private Integer status;
     private T data;
 
-    public static void main(String[] args) {
-        Response<?> resp = new Response<RegisterModel>();
-        resp.setMessage("hola");
-        resp.setStatus(200);
-
-    }
 
     public Object getData(){ return data; }
     public void setData(T data) {

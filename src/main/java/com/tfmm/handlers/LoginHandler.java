@@ -18,7 +18,7 @@ public class LoginHandler {
         ObjectMapper objMapper = new ObjectMapper();
         PropertiesReader prop = PropertiesReader.getInstance();
         DB db = new DB();
-        MD5Encrypter enc = MD5Encrypter.getInstance();
+        MD5Encrypter enc = new MD5Encrypter();
         LoginModel model = null;
         try {
             model = objMapper.readValue(req.getReader(), LoginModel.class);
@@ -28,14 +28,14 @@ public class LoginHandler {
             int status;
             if(dbModel.getUsername() == null){
                 message = "User not found";
-                status = 304;
+                status = 404;
             }else{
                 if(dbModel.getPassword().equals(model.getPassword())){
                     message = "Login successful";
                     status = 200;
                 }else{
                     message = "Incorrect data";
-                    status = 304;
+                    status = 400;
                 }
 
             }
